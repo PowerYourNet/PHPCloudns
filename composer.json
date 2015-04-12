@@ -1,0 +1,24 @@
+{
+    "name": "poweryournet/cloudns",
+	"type": "library",
+	"license": "MIT",
+	"keywords": ["cloudns","dns","cloudns.net"],
+    "description": "PHP API for Cloudns.net",
+	"homepage": "http://github.com/poweryournet/cloudns",
+    "authors": [
+        {
+            "name": "PowerYour.Net",
+            "email": "poweryournet@gmail.com",
+            "homepage": "https://www.poweryour.net/"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+		"ext-curl": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "PowerYourNet\\Cloudns\\": "src"
+        }
+    }
+}
