@@ -56,8 +56,7 @@ abstract class CloudnsRequest {
 		'domain_transferlock' => 'edit-transfer-lock.json',
 		'domain_info' => 'domain-info.json',		
 	);
-	protected $agent = 'PowerYourNet Cloudns PHP Library v1.0.1 - https://github.com/PowerYourNet';
-	
+	protected $agent = 'PowerYourNet Cloudns PHP Library v1.0.1 - https://github.com/PowerYourNet';	
 	public function __construct($user, $pass) {	
 		if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') { $this->SSL = false; } else { $this->SSL = true; }
 		$this->setCredentials($user, $pass); 
@@ -86,7 +85,6 @@ abstract class CloudnsRequest {
 	private function doRequest ($params, $route, $type) { return $this->docURL($this->getRequestURI($params, $route, $type)); }
 	protected function docURL ($url) {
 		$ch = curl_init(); 
-		echo str_replace('&0=', '&', rawurldecode ($url));
 		curl_setopt($ch, CURLOPT_URL, str_replace('&0=', '&', rawurldecode ($url)));
 		curl_setopt($ch, CURLOPT_HEADER, false);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -133,7 +131,6 @@ abstract class CloudnsRequest {
 	public function zone_stats_monthly ($domain, $year) { return $this->doRequest(array('domain-name' => $domain, 'year' => $year), __FUNCTION__, 'dns'); }
 	public function zone_stats_yearly ($domain) { return $this->doRequest(array('domain-name' => $domain), __FUNCTION__, 'dns'); }
 	public function zone_stats_last30days ($domain) { return $this->doRequest(array('domain-name' => $domain), __FUNCTION__, 'dns'); }
-	
 	public function nameservers_list () { return $this->doRequest(array(), __FUNCTION__, 'dns'); }
 	public function login_test() { return $this->doRequest(array(), __FUNCTION__, 'dns'); }
 	public function mailforward_add ($domain, $box, $host, $dest) { return $this->doRequest(array('domain-name' => $domain, 'box' => $box, 'host' => $host, 'destination' => $dest), __FUNCTION__, 'dns'); }

@@ -4,7 +4,7 @@
 	"license": "MIT",
 	"keywords": ["cloudns","dns","cloudns.net"],
     "description": "PHP API for Cloudns.net",
-	"homepage": "http://github.com/poweryournet/cloudns",
+	"homepage": "http://github.com/poweryournet/PHPCloudns",
     "authors": [
         {
             "name": "PowerYour.Net",
